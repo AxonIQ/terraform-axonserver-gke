@@ -20,7 +20,7 @@ resource "kubernetes_service" "axonserver" {
     annotations = merge(
       {
         "prometheus.io/scrape" = "true"
-        "prometheus.io/port"   = "8081"
+        "prometheus.io/port"   = "8024"
         "prometheus.io/path"   = "/actuator/prometheus"
       },
       var.gke_neg && length(var.gke_neg_zone) > 0 ? {
